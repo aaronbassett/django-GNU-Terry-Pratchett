@@ -11,7 +11,11 @@ try:
                 "ENGINE": "django.db.backends.sqlite3",
             }
         },
-        ROOT_URLCONF="gnu_terry_pratchett.urls",
+        ROOT_URLCONF="tests.urls",
+        MIDDLEWARE_CLASSES=(
+            'django.middleware.common.CommonMiddleware',
+            'gnu_terry_pratchett.middleware.ClacksMiddleware',
+        ),
         INSTALLED_APPS=[
             "django.contrib.auth",
             "django.contrib.contenttypes",
