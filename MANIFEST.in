@@ -1,0 +1,2 @@
+include README.md
+recursive-include gnu-terry-pratchett *.html *.png *.gif *js *.css *jpg *jpeg *svg *py
