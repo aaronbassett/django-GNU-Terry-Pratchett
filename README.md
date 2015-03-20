@@ -30,3 +30,23 @@ Once installed add the middleware to you project:
         ...
         'gnu_terry_pratchett.middleware.ClacksMiddleware',
     ),
+
+We also provide a view decorator and a mixin for your Class-Based Views if you
+don't want to have the header on every response.
+
+    from gnu_terry_pratchett.decorators import clacks_overhead
+    from gnu_terry_pratchett.views import ClacksMixin
+
+
+    # function view
+    @clacks_overhead
+    def my_view(request):
+        ...
+        return my_response
+
+
+    # CBV
+    class MyView(ClacksMixin, View):
+        def get(self, request):
+            ...
+            return my_response
